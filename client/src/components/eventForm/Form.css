@@ -1,0 +1,111 @@
+/* form styles */
+
+/* main form styles */
+
+.mainForm {
+	background-color: #f7f8f9;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding-top: 2rem;
+	border-right: solid 0.15rem #ed1a5d;
+}
+
+.mainForm > form {
+	display: flex;
+	flex-direction: column;
+}
+
+.mainForm > form > input {
+	border: #ed1a5d 0.15rem solid;
+	font-size: 1rem;
+	border-radius: 0.3rem;
+	width: 12rem;
+	height: 2.3rem;
+	margin: 0.3rem 0rem;
+	padding-left: 0.3rem;
+}
+
+.mainForm > form > input:focus {
+	outline: none;
+}
+
+.mainForm > form > select {
+	border: #ed1a5d 0.15rem solid;
+	font-size: 1rem;
+	border-radius: 0.3rem;
+	width: 12rem;
+	height: 2.3rem;
+	margin: 0.3rem 0rem;
+	padding-left: 0.3rem;
+}
+
+.mainForm > form > select:focus {
+	outline: none;
+}
+
+.mainForm > form > button {
+	border-radius: 0.3rem;
+	width: 12rem;
+	height: 2.3rem;
+	margin-top: 0.5rem;
+	border: #ed1a5d 0.15rem solid;
+	background-color: white;
+	color: #ce1751;
+	font-size: 1rem;
+	font-weight: bold;
+	transition: 0.5s;
+}
+
+.mainForm > form > button:hover {
+	cursor: pointer;
+	background-color: #ed1a5d;
+	color: white;
+}
+
+/* update form styles */
+
+.updateForm > form {
+	display: flex;
+	flex-direction: column;
+}
+
+.updateForm > form > input {
+	border: #ed1a5d 0.15rem solid;
+	font-size: 1rem;
+	border-radius: 0.3rem;
+	width: 10rem;
+	height: 1.8rem;
+	margin: 0.3rem 0rem;
+	padding-left: 0.3rem;
+}
+
+.updateForm > form > select {
+	width: 10rem;
+	height: 1.8rem;
+	border-radius: 0.3rem;
+}
+
+.updateForm > form > select:focus {
+	outline: none;
+}
+
+.updateForm > form > button {
+	margin: 0.1rem 0.5rem;
+	height: 1.8rem;
+	width: 8rem;
+	font-size: 0.9rem;
+	font-weight: bold;
+	border-radius: 0.3rem;
+	background-color: white;
+	color: #7220cf;
+	border: #7220cf solid 0.15rem;
+	transition: 0.5s;
+}
+
+.updateForm > form > button:hover {
+	cursor: pointer;
+	background-color: #7220cf;
+	border: #7220cf solid 0.15rem;
+	color: white;
+}

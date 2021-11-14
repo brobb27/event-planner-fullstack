@@ -1,0 +1,76 @@
+/* event component and list styles */
+
+/* eventList styles */
+
+#eventListContainer {
+	padding: 1rem 2rem;
+}
+
+/* eventCompontent styles */
+
+.componentContainer {
+	margin: 1rem 0rem;
+	padding: 0.5rem 0rem;
+	outline: solid #2c0876 0.15rem;
+	border-radius: 0.5rem;
+}
+
+.componentContainer > div > a > h2 {
+	border-bottom: solid #2c0876 0.125rem;
+	border-radius: 0.5rem;
+	padding: 0.5rem 0.5rem 1rem;
+}
+
+.componentContainer > h2 {
+	border-bottom: solid #2c0876 0.125rem;
+	border-radius: 0.5rem;
+	padding: 0.5rem 0.5rem 1rem;
+}
+
+.eventDetails {
+	padding: 0.5rem 0.5rem 0rem;
+}
+
+.eventDetails > h4 {
+	text-decoration: underline;
+	padding-bottom: 0.2rem;
+}
+
+.eventDetails > p {
+	padding-bottom: 0.5rem;
+}
+
+/* button styles */
+.componentContainer > button {
+	margin: 0.1rem 0.5rem;
+	height: 1.8rem;
+	width: 8rem;
+	font-size: 0.9rem;
+	font-weight: bold;
+	border-radius: 0.3rem;
+	background-color: white;
+	color: #7220cf;
+	border: #7220cf solid 0.15rem;
+	transition: 0.5s;
+}
+
+.componentContainer > button:hover {
+	cursor: pointer;
+	background-color: #7220cf;
+	border: #7220cf solid 0.15rem;
+	color: white;
+}
+
+.cancleButton {
+	width: 10rem;
+}
+
+/* checkbox styles */
+
+.checkbox {
+	float: right;
+	margin-right: 1rem;
+	margin-top: 0.5rem;
+	height: 1.1rem;
+	width: 1.1rem;
+}
