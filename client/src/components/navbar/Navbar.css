@@ -3,8 +3,8 @@
 #navbar {
 	position: fixed;
 	width: 100%;
-	background-color: #ed1a5d;
-	color: white;
+	background-color: #3f21ed;
+	color: #b4caff;
 	padding: 0.5rem 2rem;
 	border-bottom-left-radius: 0.5rem;
 	border-bottom-left-radius: 0.5rem;
@@ -12,8 +12,9 @@
 
 #navbar > a {
 	text-decoration: unset;
-	color: white;
+	color: whitesmoke;
 	cursor: pointer;
+	letter-spacing: 0.1rem;
 }
 
 #navbar > a:hover {

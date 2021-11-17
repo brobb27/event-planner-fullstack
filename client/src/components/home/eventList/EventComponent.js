@@ -18,7 +18,7 @@ function EventComponent({event, handleCheck}) {
 
     // delete request
     function deleteEvent() {
-        axios.delete(`https://rf-json-server.herokuapp.com/events/${event.id}`)
+        axios.delete(`sessionList/${event._id}`)
         .then(res => {
             // console.log(res)
             setEventList(prevList => prevList.filter(savedEvent => savedEvent.id !== event.id))
@@ -53,11 +53,14 @@ function EventComponent({event, handleCheck}) {
             <>
                 <h2>{event.name}</h2>
                 <Form 
-                    name= {event.name}
+                    title= {event.title}
                     description= {event.description}
-                    company= {event.company}
-                    color= {event.color}
-                    id= {event.id}
+                    location= {event.location}
+                    startTime= {event.startTime}
+                    endTime= {event.endTime}
+                    sponsor= {event.sponsor}
+                    sponsorColor= {event.sponsorColor}
+                    id= {event._id}
                     isEditing = {isEditing}
                     setEdit = {setEdit}
                     theClass= 'updateForm'

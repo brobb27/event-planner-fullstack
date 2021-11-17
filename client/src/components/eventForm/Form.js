@@ -9,20 +9,19 @@ function Form(props) {
 
     // init values for inputs to handle updated form
     const initValues = {
-        name: props.name || '',
+        title: props.title || '',
         description: props.description || '',
-        company: props.company || '',
-        color: props.color || 'black',
+        location: props.location || '',
+        startTime: props.startTime || '',
+        endTime: props.endTime || '',
+        sponsor: props.sponsor || '',
+        sponsorColor: props.sponsorColor || '#000000',
     }
-
-    // web safe named colors
-    const namedColors = ['black', 'blue', 'lime', 'cyan', 'aqua', 'red', 'magenta', 'yellow', 'maroon', 'purple', 'green', 'olive', 'teal', 'pink', 'orange']
-    const options = namedColors.map(color => <option key={color} value={color}>{color}</option>)
 
     // state handler for user inputs
     const [eventInfo, setEventInfo] = useState(initValues)
     // destructured state for convenience
-    const {name, description, company, color} = eventInfo
+    const {title, description, location, startTime, endTime, sponsor, sponsorColor} = eventInfo
 
     // handle change for input boxes
     function handleChange(e) {
@@ -38,7 +37,7 @@ function Form(props) {
     // handle addEvent
     function addEvent(e) {
         e.preventDefault()
-        axios.post(`https://rf-json-server.herokuapp.com/events/`, eventInfo)
+        axios.post(`/sessionList`, eventInfo)
             .then(res => {
                 // console.log(res.data)
                 const newEvent = res.data
@@ -58,7 +57,7 @@ function Form(props) {
     // handle updateEvent
     function updateEvent(e) {
         e.preventDefault()
-        axios.put(`https://rf-json-server.herokuapp.com/events/${props.id}`, eventInfo)
+        axios.put(`sessionList/${props.id}`, eventInfo)
             .then(res => {
                 // console.log(res.data)
                 const updatedEvent = res.data
@@ -82,9 +81,9 @@ function Form(props) {
             >
                 <input 
                     type= 'text'
-                    name= 'name'
-                    value= {name}
-                    placeholder='Event Name'
+                    name= 'title'
+                    value= {title}
+                    placeholder='Session Title'
                     onChange={handleChange}
                     required
                 />
@@ -92,28 +91,49 @@ function Form(props) {
                     type= 'text'
                     name= 'description'
                     value= {description}
-                    placeholder='Event Description'
+                    placeholder='Session Description'
+                    onChange={handleChange}
+                    required
+                />
+                <input 
+                    type='text'
+                    name='location'
+                    value= {location}
+                    placeholder= 'Session Location'
+                    onChange={handleChange}
+                    required
+                />
+                <p>Start Time</p>
+                <input 
+                    type='time'
+                    name='startTime'
+                    value= {startTime}
+                    onChange={handleChange}
+                    required
+                />
+                <p>End Time</p>
+                <input 
+                    type='time'
+                    name='endTime'
+                    value= {endTime}
                     onChange={handleChange}
                     required
                 />
                 <input 
                     type= 'text'
-                    name= 'company'
-                    value= {company}
-                    placeholder='Company Name'
+                    name= 'sponsor'
+                    value= {sponsor}
+                    placeholder='Sponsor Name'
                     onChange={handleChange}
                     required
                 />
-                <p>Select Color</p>
-                <select 
-                    style={{border: `solid ${color} .15rem`}} 
-                    name= 'color' value= {color} 
+                <p>Select Sponsor Color</p>
+                <input 
+                    type='color'
+                    name='sponsorColor'
+                    value={sponsorColor}
                     onChange={handleChange}
-                    data-testid='colorSelector'
-                    required 
-                >
-                    {options}
-                </select>
+                />
                 <button>{props.isEditing === false ? 'Add Event' : 'Update Event'}</button>
             </form>
         </div>
@@ -121,3 +141,10 @@ function Form(props) {
 }
 
 export default Form
+
+
+// Refactored code
+
+    // web safe named colors (good option for any select input)
+    // const namedColors = ['black', 'blue', 'lime', 'cyan', 'aqua', 'red', 'magenta', 'yellow', 'maroon', 'purple', 'green', 'olive', 'teal', 'pink', 'orange']
+    // const options = namedColors.map(color => <option key={color} value={color}>{color}</option>)

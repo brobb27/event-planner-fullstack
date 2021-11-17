@@ -35,7 +35,7 @@ describe("Form Tests", () => {
                     isEditing={false} 
                     theClass="mainForm"
                 />)
-            const inputElement = screen.getByPlaceholderText('Event Name')
+            const inputElement = screen.getByPlaceholderText('Session Title')
             fireEvent.change(inputElement, { target: {value: 'Testing Event Name'} })
             expect(inputElement.value).toBe("Testing Event Name")
         })
@@ -47,7 +47,7 @@ describe("Form Tests", () => {
                     isEditing={false} 
                     theClass="mainForm"
                 />)
-            const inputElement = screen.getByPlaceholderText('Event Description')
+            const inputElement = screen.getByPlaceholderText('Session Description')
             fireEvent.change(inputElement, { target: {value: 'Testing Event Description'} })
             expect(inputElement.value).toBe("Testing Event Description")
         })
@@ -59,7 +59,7 @@ describe("Form Tests", () => {
                     isEditing={false} 
                     theClass="mainForm"
                 />)
-            const inputElement = screen.getByPlaceholderText('Company Name')
+            const inputElement = screen.getByPlaceholderText('Sponsor Name')
             fireEvent.change(inputElement, { target: {value: 'Testing Company Name'} })
             expect(inputElement.value).toBe("Testing Company Name")
         })

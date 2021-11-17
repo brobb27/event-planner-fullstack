@@ -13,9 +13,9 @@ function EventList() {
 
     // get request function for reusability if needed
     function getEventList() {
-        axios.get(`https://rf-json-server.herokuapp.com/events/`)
+        axios.get(`/sessionList`)
             .then(res => {
-                // console.log(res.data)
+                console.log(res.data)
                 const eventList = res.data
                 sortEvents(eventList)
                 setEventList(eventList)
@@ -68,7 +68,7 @@ function EventList() {
     // Handle delete selected
     async function handleDelteSelected() {
         for await (const item of checkedList) {
-            await axios.delete(`https://rf-json-server.herokuapp.com/events/${item}`)
+            await axios.delete(`sessionList/${item}`)
             .then(res => {
                 console.log(res)
                 setEventList(prevList => prevList.filter(event => event.id !== item))
@@ -82,7 +82,7 @@ function EventList() {
     }
 
     // map through eventList and create new event component for each one
-    const eventComponents = eventList.map(info => <EventComponent key={info.id} event={info} handleCheck={handleCheck}/>)
+    const eventComponents = eventList.map(info => <EventComponent key={info._id} event={info} handleCheck={handleCheck}/>)
 
     return (
         <div id='eventListContainer'>

@@ -3,12 +3,12 @@
 /* main form styles */
 
 .mainForm {
-	background-color: #f7f8f9;
+	background-color: #ffffff;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	padding-top: 2rem;
-	border-right: solid 0.15rem #ed1a5d;
+	border-right: solid 0.15rem #b4caff;
 }
 
 .mainForm > form {
@@ -17,8 +17,8 @@
 }
 
 .mainForm > form > input {
-	border: #ed1a5d 0.15rem solid;
-	font-size: 1rem;
+	border: #b4caff 0.15rem solid;
+	font-size: 0.9rem;
 	border-radius: 0.3rem;
 	width: 12rem;
 	height: 2.3rem;
@@ -31,7 +31,7 @@
 }
 
 .mainForm > form > select {
-	border: #ed1a5d 0.15rem solid;
+	border: #b4caff 0.15rem solid;
 	font-size: 1rem;
 	border-radius: 0.3rem;
 	width: 12rem;
@@ -49,9 +49,9 @@
 	width: 12rem;
 	height: 2.3rem;
 	margin-top: 0.5rem;
-	border: #ed1a5d 0.15rem solid;
+	border: #3f21ed 0.15rem solid;
 	background-color: white;
-	color: #ce1751;
+	color: #3f21ed;
 	font-size: 1rem;
 	font-weight: bold;
 	transition: 0.5s;
@@ -59,8 +59,12 @@
 
 .mainForm > form > button:hover {
 	cursor: pointer;
-	background-color: #ed1a5d;
+	background-color: #3f21ed;
 	color: white;
+}
+
+.mainForm > form > p {
+	font-size: 0.9rem;
 }
 
 /* update form styles */
@@ -71,7 +75,7 @@
 }
 
 .updateForm > form > input {
-	border: #ed1a5d 0.15rem solid;
+	border: #b4caff 0.15rem solid;
 	font-size: 1rem;
 	border-radius: 0.3rem;
 	width: 10rem;

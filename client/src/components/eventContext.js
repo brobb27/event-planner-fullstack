@@ -8,7 +8,7 @@ function EventContextProvider({children}) {
 
     // sorts event list after request
     function sortEvents(list) {
-        list.sort((a, b) => (a.company.toUpperCase() > b.company.toUpperCase()) ? 1 : ((b.company.toUpperCase() > a.company.toUpperCase()) ? -1 : 0))
+        list.sort((a, b) => (a.sponsor.toUpperCase() > b.sponsor.toUpperCase()) ? 1 : ((b.sponsor.toUpperCase() > a.sponsor.toUpperCase()) ? -1 : 0))
     }
 
     return (
