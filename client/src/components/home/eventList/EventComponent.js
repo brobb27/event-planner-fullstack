@@ -5,7 +5,7 @@ import { EventContext } from '../../eventContext'
 import Form from '../../eventForm/Form'
 import './Event.css'
 
-function EventComponent({event, handleCheck}) {
+function EventComponent({session, handleCheck}) {
     // import context variabls needed
     const { setEventList } = useContext(EventContext)
 
@@ -18,18 +18,43 @@ function EventComponent({event, handleCheck}) {
 
     // delete request
     function deleteEvent() {
-        axios.delete(`sessionList/${event._id}`)
+        axios.delete(`sessionList/${session._id}`)
         .then(res => {
             // console.log(res)
-            setEventList(prevList => prevList.filter(savedEvent => savedEvent.id !== event.id))
-            alert(`You have removed ${event.name} from the event line up.`)
+            setEventList(prevList => prevList.filter(savedEvent => savedEvent._id !== session.id))
+            alert(`You have removed ${session.title} from the session line up.`)
         })
         .catch((err) => {
             console.log(err);
             alert(
-              "Sorry, we are not able to delete this event at this time. Please try again later. If the issue persists, please reach out to our support team."
+              "Sorry, we are not able to delete this session at this time. Please try again later. If the issue persists, please reach out to our support team."
             );
         });
+    }
+
+    // Time converter (from military to standard)
+    function convertTime(time) {
+    // console.log(time)
+    const newStringTime = time.replace(':', '')
+    const newTime = Number(newStringTime)
+    // console.log(newTime)
+    if (newTime < 1300 && newTime >= 1200) {
+        const stringTime = newTime.toString()
+        const finalTime = stringTime.slice(0, 2) + ':' + stringTime.slice(2) + 'pm'
+        return finalTime
+    } else if (newTime < 1200 && newTime >= 1000) {
+        const stringTime = newTime.toString()
+        const finalTime = stringTime.slice(0, 2) + ':' + stringTime.slice(2) + 'am'
+        return finalTime
+    } else if (newTime >= 1300) {
+        const convertTime = newTime - 1200
+        const stringTime = convertTime.toString()
+        const finalTime = stringTime.length > 3 ? (stringTime.slice(0, 2) + `:` + stringTime.slice(2)) + `pm` : (stringTime.slice(0, 1) + `:` + stringTime.slice(1) + `pm`)
+        return finalTime
+    } else {
+        const finalTime = time.slice(1) + 'am'
+        return finalTime
+    }
     }
 
     return (
@@ -37,30 +62,31 @@ function EventComponent({event, handleCheck}) {
             {isEditing === false ?
             <>
                 <div>
-                    <Link style={{color: `${event.color}`}} to={`/event/${event.id}`}><h2>{event.name}</h2></Link>
+                    <p>{convertTime(session.startTime)} - {convertTime(session.endTime)}</p>
+                    <Link to={`/sessionList/${session._id}`}><h2>{session.title}</h2></Link>
                     <div className='eventDetails'>
                         <h4>Description</h4>
-                        <p>{event.description}</p>
+                        <p>{session.description}</p>
                         <h4>Company</h4>
-                        <p>{event.company}</p>
+                        <p>{session.company}</p>
                     </div>
                 </div>
                 <button onClick={toggleEdit}>Update</button>
                 <button onClick={deleteEvent}>Delete</button>
-                <input type='checkbox' value={event.id} className='checkbox' onChange={handleCheck}/>
+                <input type='checkbox' value={session.id} className='checkbox' onChange={handleCheck}/>
             </>
             :
             <>
-                <h2>{event.name}</h2>
+                <h2>{session.name}</h2>
                 <Form 
-                    title= {event.title}
-                    description= {event.description}
-                    location= {event.location}
-                    startTime= {event.startTime}
-                    endTime= {event.endTime}
-                    sponsor= {event.sponsor}
-                    sponsorColor= {event.sponsorColor}
-                    id= {event._id}
+                    title= {session.title}
+                    description= {session.description}
+                    location= {session.location}
+                    startTime= {session.startTime}
+                    endTime= {session.endTime}
+                    sponsor= {session.sponsor}
+                    sponsorColor= {session.sponsorColor}
+                    id= {session._id}
                     isEditing = {isEditing}
                     setEdit = {setEdit}
                     theClass= 'updateForm'

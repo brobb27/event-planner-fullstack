@@ -71,7 +71,7 @@ function EventList() {
             await axios.delete(`sessionList/${item}`)
             .then(res => {
                 console.log(res)
-                setEventList(prevList => prevList.filter(event => event.id !== item))
+                setEventList(prevList => prevList.filter(event => event._id !== item))
             })
             .catch(err => {
                 console.log(err)
@@ -82,7 +82,7 @@ function EventList() {
     }
 
     // map through eventList and create new event component for each one
-    const eventComponents = eventList.map(info => <EventComponent key={info._id} event={info} handleCheck={handleCheck}/>)
+    const eventComponents = eventList.map(info => <EventComponent key={info._id} session={info} handleCheck={handleCheck}/>)
 
     return (
         <div id='eventListContainer'>

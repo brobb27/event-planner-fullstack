@@ -8,7 +8,7 @@ function EventContextProvider({children}) {
 
     // sorts event list after request
     function sortEvents(list) {
-        list.sort((a, b) => (a.sponsor.toUpperCase() > b.sponsor.toUpperCase()) ? 1 : ((b.sponsor.toUpperCase() > a.sponsor.toUpperCase()) ? -1 : 0))
+        list.sort((a, b) => a.startTime.replace(':', '') - b.startTime.replace(':', ''))
     }
 
     return (
@@ -19,3 +19,8 @@ function EventContextProvider({children}) {
 }
 
 export {EventContext, EventContextProvider}
+
+// refactored code
+
+// no longer want to sort by name
+// list.sort((a, b) => (a.title.toUpperCase() > b.title.toUpperCase()) ? 1 : ((b.title.toUpperCase() > a.title.toUpperCase()) ? -1 : 0))

@@ -62,7 +62,7 @@ function Form(props) {
                 // console.log(res.data)
                 const updatedEvent = res.data
                 setEventList(prevList => {
-                    const newList = prevList.map(event => event.id !== props.id ? event : updatedEvent)
+                    const newList = prevList.map(event => event._id !== props.id ? event : updatedEvent)
                     sortEvents(newList)
                     return newList
                 })
