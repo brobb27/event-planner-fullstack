@@ -89,7 +89,7 @@ function EventList() {
             {requestFailed === false ?
             <>
             {eventComponents}
-            <button onClick={handleDelteSelected} id='deleteSelected'>Delete Selected Events</button>
+            <button onClick={handleDelteSelected} id='deleteSelected'>Delete Selected Sessions</button>
             </> :
             <h1>Sorry, It looks like we are having trouble retrieving your event list. Please refresh the page. If the issue persists please reach out to our support team.</h1>
             }

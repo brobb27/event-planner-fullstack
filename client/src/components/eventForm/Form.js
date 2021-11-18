@@ -134,7 +134,7 @@ function Form(props) {
                     value={sponsorColor}
                     onChange={handleChange}
                 />
-                <button>{props.isEditing === false ? 'Add Event' : 'Update Event'}</button>
+                <button>{props.isEditing === false ? 'Add Session' : 'Update Session'}</button>
             </form>
         </div>
     )

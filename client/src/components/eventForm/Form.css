@@ -9,6 +9,7 @@
 	align-items: center;
 	padding-top: 2rem;
 	border-right: solid 0.15rem #b4caff;
+	height: 100%;
 }
 
 .mainForm > form {
@@ -78,14 +79,14 @@
 	border: #b4caff 0.15rem solid;
 	font-size: 1rem;
 	border-radius: 0.3rem;
-	width: 10rem;
+	width: 15rem;
 	height: 1.8rem;
 	margin: 0.3rem 0rem;
 	padding-left: 0.3rem;
 }
 
 .updateForm > form > select {
-	width: 10rem;
+	width: 15rem;
 	height: 1.8rem;
 	border-radius: 0.3rem;
 }
@@ -97,7 +98,7 @@
 .updateForm > form > button {
 	margin: 0.1rem 0.5rem;
 	height: 1.8rem;
-	width: 8rem;
+	width: 10rem;
 	font-size: 0.9rem;
 	font-weight: bold;
 	border-radius: 0.3rem;

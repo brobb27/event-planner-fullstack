@@ -3,14 +3,14 @@
 /* eventList styles */
 
 #eventListContainer {
-	padding: 1rem 2rem;
+	padding: 0rem 2rem 1rem;
 }
 
 /* eventCompontent styles */
 
 .componentContainer {
-	margin: 1rem 0rem;
-	padding: 0.5rem 0rem;
+	margin: 1.5rem 0rem;
+	padding: 0.5rem 0.5rem;
 	outline: solid #2c0876 0.15rem;
 	border-radius: 0.5rem;
 	width: 85%;
@@ -18,29 +18,26 @@
 	margin-left: auto;
 }
 
-.componentContainer > div > a > h2 {
-	border-bottom: solid #2c0876 0.125rem;
-	border-radius: 0.5rem;
-	padding: 0.5rem 0.5rem 1rem;
-}
-
 .componentContainer > h2 {
-	border-bottom: solid #2c0876 0.125rem;
 	border-radius: 0.5rem;
 	padding: 0.5rem 0.5rem 1rem;
 }
 
-.eventDetails {
-	padding: 0.5rem 0.5rem 0rem;
+.componentContainer > div > a {
+	color: rgb(27, 27, 27);
 }
 
-.eventDetails > h4 {
-	text-decoration: underline;
-	padding-bottom: 0.2rem;
+.componentContainer > div > a > h2 {
+	font-size: 1.5rem;
+	padding-bottom: 1rem;
 }
 
-.eventDetails > p {
-	padding-bottom: 0.5rem;
+.componentContainer > div > a:hover {
+	color: rgb(73, 73, 73);
+}
+
+.componentContainer > div > p {
+	padding-bottom: 1rem;
 }
 
 /* button styles */

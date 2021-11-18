@@ -5,7 +5,7 @@ import './EventDetail.css'
 
 function EventDetailPage(props) {
     // use params to get id
-    const {eventId} = useParams()
+    const {sessionId} = useParams()
 
     // state handler for get request
     const [eventInfo, setEventInfo] = useState()
@@ -15,7 +15,7 @@ function EventDetailPage(props) {
 
     // get by id request
     function getEventDetails() {
-        axios.get(`https://rf-json-server.herokuapp.com/events/${eventId}`)
+        axios.get(`/sessionList/${sessionId}`)
             .then(res => {
                 // console.log(res.data)
                 setEventInfo(res.data)
@@ -45,12 +45,12 @@ function EventDetailPage(props) {
             </div>
             :
             <div id='detailsCon'>
-                <h1>{eventInfo.name}</h1>
+                <h1>{eventInfo.title}</h1>
                 <div>
                     <h3>Description</h3>
                     <p>{eventInfo.description}</p>
                     <h3>Company</h3>
-                    <p>{eventInfo.company}</p>
+                    <p>{eventInfo.sponsor}</p>
                 </div>
             </div>
             }

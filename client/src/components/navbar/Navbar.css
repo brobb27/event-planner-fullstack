@@ -3,8 +3,8 @@
 #navbar {
 	position: fixed;
 	width: 100%;
-	background-color: #3f21ed;
-	color: #b4caff;
+	background-color: #5a40eb;
+	color: whitesmoke;
 	padding: 0.5rem 2rem;
 	border-bottom-left-radius: 0.5rem;
 	border-bottom-left-radius: 0.5rem;
@@ -19,4 +19,8 @@
 
 #navbar > a:hover {
 	color: rgb(221, 219, 219);
+}
+
+#navbar > a > h1 {
+	font-weight: lighter;
 }

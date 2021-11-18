@@ -57,27 +57,37 @@ function EventComponent({session, handleCheck}) {
     }
     }
 
+    // Time to number for duration
+    function duration(startTime, endTime) {
+        const startString = startTime.replace(':', '')
+        const endString = endTime.replace(':', '')
+        const newStartTime = Number(startString)
+        const newEndTime = Number(endString)
+        const duration = Math.ceil((newEndTime - newStartTime) / 100)
+        return duration
+    }
+
     return (
         <div className='componentContainer'>
             {isEditing === false ?
             <>
                 <div>
-                    <p>{convertTime(session.startTime)} - {convertTime(session.endTime)}</p>
-                    <Link to={`/sessionList/${session._id}`}><h2>{session.title}</h2></Link>
-                    <div className='eventDetails'>
-                        <h4>Description</h4>
-                        <p>{session.description}</p>
-                        <h4>Company</h4>
-                        <p>{session.company}</p>
-                    </div>
+                    <h4>Session Hours:</h4>
+                    <p>{convertTime(session.startTime)} - {convertTime(session.endTime)} <span>({duration(session.startTime, session.endTime)} hours)</span></p>
+                    <h4>Session Title:</h4>
+                    <Link to={`/details/${session._id}`}><h2>{session.title}</h2></Link>
+                    <h4>Session Location:</h4>
+                    <p>{session.location}</p>
+                    <h4>Sponsor:</h4>
+                    <p>{session.sponsor}</p>
                 </div>
                 <button onClick={toggleEdit}>Update</button>
                 <button onClick={deleteEvent}>Delete</button>
-                <input type='checkbox' value={session.id} className='checkbox' onChange={handleCheck}/>
+                <input type='checkbox' value={session._id} className='checkbox' onChange={handleCheck}/>
             </>
             :
             <>
-                <h2>{session.name}</h2>
+                <h2>Editing {session.title}</h2>
                 <Form 
                     title= {session.title}
                     description= {session.description}

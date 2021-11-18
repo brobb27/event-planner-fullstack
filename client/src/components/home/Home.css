@@ -5,6 +5,7 @@
 	display: grid;
 	grid-template-columns: 1fr 3.5fr;
 	min-height: 100vh;
+	background-color: rgb(247, 248, 253);
 }
 
 #deleteSelected {
@@ -18,7 +19,7 @@
 	margin-top: 0.5rem;
 	border: blue 0.15rem solid;
 	background-color: white;
-	color: #ce1751;
+	color: gray;
 	font-size: 1rem;
 	font-weight: bold;
 	transition: 0.5s;
@@ -28,4 +29,27 @@
 	cursor: pointer;
 	background-color: #b4caff;
 	color: white;
+}
+
+/* links styles */
+
+#links {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#links > a {
+	padding: 2rem 1.2rem 0rem;
+	text-decoration: unset;
+	color: black;
+	transition: 0.3s;
+}
+
+#links > a:hover {
+	color: #8598c4;
+}
+
+#selected {
+	border-bottom: solid black 0.2rem;
 }
