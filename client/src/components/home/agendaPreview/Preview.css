@@ -1,0 +1,34 @@
+/* all preview styles */
+
+#previewListContainer {
+	padding: 2rem;
+}
+
+#previewListContainer > h1 {
+	font-weight: lighter;
+	text-align: center;
+}
+
+.previewComp {
+	margin: 1.8rem 0rem;
+	padding: 1.2rem;
+	outline: solid black 0.1rem;
+	border-radius: 0.5rem;
+	width: 85%;
+	margin-right: auto;
+	margin-left: auto;
+	line-height: 2rem;
+}
+
+.time > span {
+	font-weight: bolder;
+}
+
+.sponsor {
+	display: grid;
+	place-items: center;
+	height: 5rem;
+	width: 6rem;
+	border-radius: 0.5rem;
+	font-weight: bold;
+}

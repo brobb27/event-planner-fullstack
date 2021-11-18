@@ -7,7 +7,7 @@ import './Event.css'
 
 function EventComponent({session, handleCheck}) {
     // import context variabls needed
-    const { setEventList } = useContext(EventContext)
+    const { setEventList, convertTime, duration } = useContext(EventContext)
 
     // state to determine if component is being edited
     const [isEditing, setEdit] = useState(false)
@@ -30,41 +30,6 @@ function EventComponent({session, handleCheck}) {
               "Sorry, we are not able to delete this session at this time. Please try again later. If the issue persists, please reach out to our support team."
             );
         });
-    }
-
-    // Time converter (from military to standard)
-    function convertTime(time) {
-    // console.log(time)
-    const newStringTime = time.replace(':', '')
-    const newTime = Number(newStringTime)
-    // console.log(newTime)
-    if (newTime < 1300 && newTime >= 1200) {
-        const stringTime = newTime.toString()
-        const finalTime = stringTime.slice(0, 2) + ':' + stringTime.slice(2) + 'pm'
-        return finalTime
-    } else if (newTime < 1200 && newTime >= 1000) {
-        const stringTime = newTime.toString()
-        const finalTime = stringTime.slice(0, 2) + ':' + stringTime.slice(2) + 'am'
-        return finalTime
-    } else if (newTime >= 1300) {
-        const convertTime = newTime - 1200
-        const stringTime = convertTime.toString()
-        const finalTime = stringTime.length > 3 ? (stringTime.slice(0, 2) + `:` + stringTime.slice(2)) + `pm` : (stringTime.slice(0, 1) + `:` + stringTime.slice(1) + `pm`)
-        return finalTime
-    } else {
-        const finalTime = time.slice(1) + 'am'
-        return finalTime
-    }
-    }
-
-    // Time to number for duration
-    function duration(startTime, endTime) {
-        const startString = startTime.replace(':', '')
-        const endString = endTime.replace(':', '')
-        const newStartTime = Number(startString)
-        const newEndTime = Number(endString)
-        const duration = Math.ceil((newEndTime - newStartTime) / 100)
-        return duration
     }
 
     return (

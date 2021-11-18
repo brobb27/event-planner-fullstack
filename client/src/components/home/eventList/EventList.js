@@ -42,7 +42,7 @@ function EventList() {
     // // Delete promise
     // function deletePromise(id) {
     //     return new Promise((resolve, reject) => {
-    //         axios.delete(`https://rf-json-server.herokuapp.com/events/${id}`)
+    //         axios.delete(`sessionList/${item}`)
     //             .then(res => {
     //                 console.log(res)
     //                 setEventList(prevList => prevList.filter(event => event.id !== id))
