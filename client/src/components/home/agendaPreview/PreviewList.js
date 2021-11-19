@@ -1,4 +1,4 @@
-import React, {useContext, useState} from 'react'
+import React, {useContext} from 'react'
 import { EventContext } from '../../eventContext'
 import PreviewComp from './PreviewComp'
 import './Preview.css'
@@ -8,7 +8,8 @@ function PreviewList() {
     const {eventList} = useContext(EventContext)
 
     // state
-    const [requestFailed, setRequestStatus] = useState(false)
+    // const [requestFailed, setRequestStatus] = useState(false)
+    const requestFailed = false
 
 
 

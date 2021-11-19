@@ -14,12 +14,12 @@
 	margin-left: auto;
 	margin-right: auto;
 	border-radius: 0.3rem;
-	width: 15rem;
-	height: 2.3rem;
+	width: 17rem;
+	height: 2.5rem;
 	margin-top: 0.5rem;
-	border: blue 0.15rem solid;
+	border: #3f21ed 0.15rem solid;
 	background-color: white;
-	color: gray;
+	color: #3f21ed;
 	font-size: 1rem;
 	font-weight: bold;
 	transition: 0.5s;
@@ -27,8 +27,9 @@
 
 #deleteSelected:hover {
 	cursor: pointer;
-	background-color: #b4caff;
+	background-color: rgb(184, 0, 0);
 	color: white;
+	border: rgb(184, 0, 0);
 }
 
 /* links styles */

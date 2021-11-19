@@ -5,13 +5,61 @@
 	font-family: "Roboto Mono", monospace;
 }
 
+/* footer styles */
+
 #footer {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 	position: relative;
 	bottom: 0;
-	margin-top: auto;
-	padding: 2rem;
-	display: grid;
-	place-items: center;
+	padding: 2rem 0rem;
 	background-color: #b4caff;
-	color: black;
+	margin-top: auto;
+}
+
+#footer > p {
+	text-align: center;
+	color: #202020;
+	font-style: italic;
+	font-weight: lighter;
+	font-size: 1rem;
+	margin-top: 0rem;
+}
+
+/* all icon styles */
+
+#icons {
+	display: flex;
+	justify-content: center;
+	margin: 1rem 0rem;
+}
+
+#icons > div {
+	background-color: #5a40eb;
+	margin: 0rem 1rem;
+	width: 3rem;
+	height: 3rem;
+	border-radius: 70%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: 0.3s;
+}
+
+#icons > div > a {
+	all: unset;
+	display: flex;
+	color: #f9f7f7;
+	font-size: 2rem;
+}
+
+#icons > div:hover {
+	cursor: pointer;
+	background-color: black;
+}
+
+#icons > div > a:hover {
+	cursor: pointer;
 }

@@ -21,7 +21,7 @@ function EventComponent({session, handleCheck}) {
         axios.delete(`sessionList/${session._id}`)
         .then(res => {
             // console.log(res)
-            setEventList(prevList => prevList.filter(savedEvent => savedEvent._id !== session.id))
+            setEventList(prevList => prevList.filter(savedEvent => savedEvent._id !== session._id))
             alert(`You have removed ${session.title} from the session line up.`)
         })
         .catch((err) => {

@@ -11,7 +11,7 @@
 .componentContainer {
 	margin: 1.5rem 0rem;
 	padding: 0.5rem 0.5rem;
-	outline: solid #2c0876 0.15rem;
+	outline: solid black 0.15rem;
 	border-radius: 0.5rem;
 	width: 85%;
 	margin-right: auto;

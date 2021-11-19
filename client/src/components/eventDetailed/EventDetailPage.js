@@ -1,14 +1,20 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import axios from 'axios'
 import './EventDetail.css'
+import {BiTime} from 'react-icons/bi'
+import {GrLocation} from 'react-icons/gr'
+import { EventContext } from '../eventContext'
 
-function EventDetailPage(props) {
+function EventDetailPage() {
     // use params to get id
     const {sessionId} = useParams()
 
+    // context
+    const {convertTime, duration} = useContext(EventContext)
+
     // state handler for get request
-    const [eventInfo, setEventInfo] = useState()
+    const [sessionInfo, setSessionInfo] = useState()
     // state handler for page loading
     const [isLoading, setLoading] = useState(true)
     const [requestFailed, setRequestStatus] = useState(false)
@@ -17,8 +23,8 @@ function EventDetailPage(props) {
     function getEventDetails() {
         axios.get(`/sessionList/${sessionId}`)
             .then(res => {
-                // console.log(res.data)
-                setEventInfo(res.data)
+                console.log(res.data)
+                setSessionInfo(res.data)
                 setLoading(false)
             })
             .catch(err => {
@@ -35,26 +41,31 @@ function EventDetailPage(props) {
 
     return (
         <div id='eventDetailContainer'>
+            <h1>Session Details</h1>
+            <Link to='/'>Back</Link>
             {isLoading === true ?
             <div>
                 {requestFailed === true ? 
-                <h1>Sorry, we were unable to retrieve this event details. Please return to the home page and try again.</h1> 
+                <h1>Sorry, we were unable to retrieve the session details. Please return to the home page and try again.</h1> 
                 :
                 <h1>Retrieving Event...</h1>
                 }
             </div>
             :
             <div id='detailsCon'>
-                <h1>{eventInfo.title}</h1>
-                <div>
+                <div id='detailComp'>
+                    <p className='detailTime'><BiTime /><span> {convertTime(sessionInfo.startTime)} - {convertTime(sessionInfo.endTime)}</span> ({duration(sessionInfo.startTime, sessionInfo.endTime)} hours)</p>
+                    <h2 className='detailTitle'>{sessionInfo.title}</h2>
+                    <p><GrLocation /> {sessionInfo.location}</p>
+                </div>
+                <div id='detailDescription'>
                     <h3>Description</h3>
-                    <p>{eventInfo.description}</p>
-                    <h3>Company</h3>
-                    <p>{eventInfo.sponsor}</p>
+                    <p>{sessionInfo.description}</p>
+                    <h3>Sponsored by:</h3>
+                    <p>{sessionInfo.sponsor}</p>
                 </div>
             </div>
             }
-            <Link to='/'>Return To Home</Link>
         </div>
     )
 }
