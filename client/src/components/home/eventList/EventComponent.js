@@ -48,7 +48,12 @@ function EventComponent({session, handleCheck}) {
                 </div>
                 <button onClick={toggleEdit}>Update</button>
                 <button onClick={deleteEvent}>Delete</button>
-                <input type='checkbox' value={session._id} className='checkbox' onChange={handleCheck}/>
+                <input 
+                    type='checkbox' 
+                    value={session._id} 
+                    className='checkbox' 
+                    onChange={handleCheck}
+                />
             </>
             :
             <>
