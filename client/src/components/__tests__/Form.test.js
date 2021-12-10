@@ -24,7 +24,7 @@ describe("Form Tests", () => {
             // Find the component you want to interact with
             const addButton = screen.getByRole("button")
             // Expect to find that element
-            expect(addButton).toHaveTextContent('Add Event')
+            expect(addButton).toHaveTextContent('Add Session')
         })
 
         // Tests to make sure input form values change
@@ -72,8 +72,8 @@ describe("Form Tests", () => {
                     theClass="mainForm"
                 />)
             const inputElement = screen.getByTestId('colorSelector')
-            fireEvent.change(inputElement, { target: {value: 'green'} })
-            expect(inputElement.value).toBe("green")
+            fireEvent.change(inputElement, { target: {value: '#000000'} })
+            expect(inputElement.value).toBe("#000000")
         })
     })
     
@@ -86,7 +86,7 @@ describe("Form Tests", () => {
             const updateButton = screen.getByRole("button")
             // expect(updateButton).toHaveTextContent('Update Event')
             // Or
-            expect(updateButton.textContent).toBe('Update Event')
+            expect(updateButton.textContent).toBe('Update Session')
         })
 
         // Test to make sure input form values change

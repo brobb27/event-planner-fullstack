@@ -133,6 +133,7 @@ function Form(props) {
                     name='sponsorColor'
                     value={sponsorColor}
                     onChange={handleChange}
+                    data-testid='colorSelector'
                 />
                 <button>{props.isEditing === false ? 'Add Session' : 'Update Session'}</button>
             </form>

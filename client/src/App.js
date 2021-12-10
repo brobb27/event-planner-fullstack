@@ -5,6 +5,7 @@ import Footer from './components/footer/Footer';
 import Navbar from './components/navbar/Navbar';
 import Home from './components/home/Home';
 import EventDetailPage from './components/eventDetailed/EventDetailPage';
+
 function App() {
   return (
     <div id="webPage">
