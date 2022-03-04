@@ -8,6 +8,7 @@
 	padding: 0.5rem 2rem;
 	border-bottom-left-radius: 0.5rem;
 	border-bottom-left-radius: 0.5rem;
+	z-index: 1;
 }
 
 #navbar > a {

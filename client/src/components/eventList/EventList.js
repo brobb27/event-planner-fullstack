@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { EventContext } from '../../eventContext'
+import { EventContext } from '../eventContext'
 import axios from 'axios'
-import EventComponent from './EventComponent'
+import EventComponent from '../eventComponent/EventComponent'
 
 function EventList() {
     // context values needed for EventList components

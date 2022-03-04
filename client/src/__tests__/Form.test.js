@@ -1,8 +1,8 @@
 import React from "react";
 import '@testing-library/jest-dom'
 import { render, screen, fireEvent } from "@testing-library/react";
-import Form from "../eventForm/Form";
-import {EventContextProvider} from '../eventContext'
+import Form from "../components/eventForm/Form";
+import {EventContextProvider} from '../components/eventContext'
 
 const MockForm = ({isEditing, theClass, eventInfo}) => {
     return (

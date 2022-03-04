@@ -1,15 +1,7 @@
-/* event component and list styles */
-
-/* eventList styles */
-
-#eventListContainer {
-	padding: 0rem 2rem 1rem;
-}
-
 /* eventCompontent styles */
 
 .componentContainer {
-	margin: 1.5rem 0rem;
+	margin: 1.25rem 0rem;
 	padding: 0.5rem 0.5rem;
 	outline: solid black 0.15rem;
 	border-radius: 0.5rem;

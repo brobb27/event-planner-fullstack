@@ -1,6 +1,6 @@
 /* home styles */
 
-#homeContainer {
+.homeContainer {
 	padding-top: 4.4rem;
 	display: grid;
 	grid-template-columns: 1fr 3.5fr;
@@ -8,49 +8,77 @@
 	background-color: rgb(247, 248, 253);
 }
 
+.smallHomeContainer {
+	padding-top: 4.4rem;
+	display: grid;
+	grid-template-columns: 1fr;
+	min-height: 100vh;
+	background-color: rgb(247, 248, 253);
+}
+
 #deleteSelected {
 	display: grid;
 	place-items: center;
-	margin-left: auto;
-	margin-right: auto;
 	border-radius: 0.3rem;
-	width: 17rem;
+	min-width: 16rem;
 	height: 2.5rem;
-	margin-top: 0.5rem;
+	margin: 0.5rem auto 1rem;
 	border: #3f21ed 0.15rem solid;
 	background-color: white;
 	color: #3f21ed;
 	font-size: 1rem;
 	font-weight: bold;
-	transition: 0.5s;
+	transition: 0.3s;
 }
 
 #deleteSelected:hover {
 	cursor: pointer;
-	background-color: rgb(184, 0, 0);
+	background-color: #f00e0e;
 	color: white;
-	border: rgb(184, 0, 0);
+	border: #f00e0e;
 }
 
-/* links styles */
+/*links styles */
 
-#links {
+.links {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
 
-#links > a {
-	padding: 2rem 1.2rem 0rem;
+.links > a {
+	padding: 3rem 1.2rem 0rem;
 	text-decoration: unset;
 	color: black;
 	transition: 0.3s;
 }
 
-#links > a:hover {
+.links > a:hover {
 	color: #8598c4;
 }
 
 #selected {
 	border-bottom: solid black 0.2rem;
 }
+
+.modalButton {
+	position: absolute;
+	top: 5.5rem;
+	left: 0.5rem;
+	border-radius: 0.3rem;
+	padding: 0rem 0.5rem;
+	height: 2rem;
+	border: #3f21ed 0.15rem solid;
+	background-color: white;
+	color: #3f21ed;
+	font-weight: bold;
+	transition: 0.5s;
+}
+
+.modalButton:hover {
+	cursor: pointer;
+	background-color: #3f21ed;
+	color: white;
+}
+
+/* 910 */

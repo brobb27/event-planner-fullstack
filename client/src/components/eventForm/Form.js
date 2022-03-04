@@ -87,7 +87,7 @@ function Form(props) {
                     onChange={handleChange}
                     required
                 />
-                <input 
+                <textarea 
                     type= 'text'
                     name= 'description'
                     value= {description}

@@ -1,7 +1,7 @@
 /* all preview styles */
 
 #previewListContainer {
-	padding: 2rem;
+	padding: 0.5rem 1rem;
 }
 
 #previewListContainer > h1 {
@@ -10,7 +10,7 @@
 }
 
 .previewComp {
-	margin: 1.8rem 0rem;
+	margin: 1.25rem 0rem;
 	padding: 0.5rem 1.2rem 1.5rem;
 	outline: solid black 0.1rem;
 	border-radius: 0.5rem;

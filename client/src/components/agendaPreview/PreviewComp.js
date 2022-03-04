@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import {EventContext} from '../../eventContext'
+import {EventContext} from '../eventContext'
 import { Link } from 'react-router-dom'
 import './Preview.css'
 import {BiTime} from 'react-icons/bi'

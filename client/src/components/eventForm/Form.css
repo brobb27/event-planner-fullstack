@@ -26,8 +26,22 @@
 	margin: 0.3rem 0rem;
 	padding-left: 0.3rem;
 }
-
 .mainForm > form > input:focus {
+	outline: none;
+}
+
+.mainForm > form > textarea {
+	resize: none;
+	border: #b4caff 0.15rem solid;
+	font-size: 0.9rem;
+	border-radius: 0.3rem;
+	width: 12rem;
+	height: 4rem;
+	margin: 0.3rem 0rem;
+	padding-left: 0.3rem;
+	padding-top: 0.3rem;
+}
+.mainForm > form > textarea:focus {
 	outline: none;
 }
 
@@ -84,6 +98,17 @@
 	margin: 0.3rem 0rem;
 	padding-left: 0.3rem;
 }
+.updateForm > form > textarea {
+	resize: none;
+	border: #b4caff 0.15rem solid;
+	font-size: 1rem;
+	border-radius: 0.3rem;
+	width: 15rem;
+	height: 4rem;
+	margin: 0.3rem 0rem;
+	padding-left: 0.3rem;
+	padding-top: 0.3rem;
+}
 
 .updateForm > form > select {
 	width: 15rem;
@@ -113,4 +138,85 @@
 	background-color: #7220cf;
 	border: #7220cf solid 0.15rem;
 	color: white;
+}
+
+/* modal form styles */
+
+.modalForm {
+	background-color: #ffffff;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding-top: 2rem;
+	height: 100%;
+}
+
+.modalForm > form {
+	display: flex;
+	flex-direction: column;
+}
+
+.modalForm > form > input {
+	border: #b4caff 0.15rem solid;
+	font-size: 0.9rem;
+	border-radius: 0.3rem;
+	width: 12rem;
+	height: 2.3rem;
+	margin: 0.3rem 0rem;
+	padding-left: 0.3rem;
+}
+.modalForm > form > input:focus {
+	outline: none;
+}
+
+.modalForm > form > textarea {
+	resize: none;
+	border: #b4caff 0.15rem solid;
+	font-size: 0.9rem;
+	border-radius: 0.3rem;
+	width: 12rem;
+	height: 4rem;
+	margin: 0.3rem 0rem;
+	padding-left: 0.3rem;
+	padding-top: 0.3rem;
+}
+.modalForm > form > textarea:focus {
+	outline: none;
+}
+
+.modalForm > form > select {
+	border: #b4caff 0.15rem solid;
+	font-size: 1rem;
+	border-radius: 0.3rem;
+	width: 12rem;
+	height: 2.3rem;
+	margin: 0.3rem 0rem;
+	padding-left: 0.3rem;
+}
+
+.modalForm > form > select:focus {
+	outline: none;
+}
+
+.modalForm > form > button {
+	border-radius: 0.3rem;
+	width: 12rem;
+	height: 2.3rem;
+	margin-top: 0.5rem;
+	border: #3f21ed 0.15rem solid;
+	background-color: white;
+	color: #3f21ed;
+	font-size: 1rem;
+	font-weight: bold;
+	transition: 0.5s;
+}
+
+.modalForm > form > button:hover {
+	cursor: pointer;
+	background-color: #3f21ed;
+	color: white;
+}
+
+.modalForm > form > p {
+	font-size: 0.9rem;
 }

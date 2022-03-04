@@ -1,9 +1,9 @@
 import axios from 'axios'
 import React, { useContext, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { EventContext } from '../../eventContext'
-import Form from '../../eventForm/Form'
-import './Event.css'
+import { EventContext } from '../eventContext'
+import Form from '../eventForm/Form'
+import './EventComponent.css'
 
 function EventComponent({session, handleCheck}) {
     // import context variabls needed

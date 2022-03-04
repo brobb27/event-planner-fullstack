@@ -1,5 +1,5 @@
 import React, {useContext} from 'react'
-import { EventContext } from '../../eventContext'
+import { EventContext } from '../eventContext'
 import PreviewComp from './PreviewComp'
 import './Preview.css'
 
