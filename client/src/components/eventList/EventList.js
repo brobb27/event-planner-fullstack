@@ -15,7 +15,6 @@ function EventList() {
     function getEventList() {
         axios.get(`/sessionList`)
             .then(res => {
-                console.log(res.data)
                 const eventList = res.data
                 sortEvents(eventList)
                 setEventList(eventList)

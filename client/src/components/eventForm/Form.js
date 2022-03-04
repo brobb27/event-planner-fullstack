@@ -52,6 +52,7 @@ function Form(props) {
                 alert(`Sorry, it looks like we were unable to ADD your event. Please try refreshing the page and try again. If the issue persists please reach out to us.`)
             })
         setEventInfo(initValues)
+        props.theClass === 'modalForm' && props.toggle()
     }
 
     // handle updateEvent

@@ -51,7 +51,7 @@ function Home() {
             <Form isEditing= {false} theClass='mainForm'/>
             }
             <Modal open={isOpen} toggle={toggleModal} >
-                <Form isEditing= {false} theClass='modalForm'/>
+                <Form isEditing= {false} theClass='modalForm' toggle={toggleModal}/>
             </Modal>
             <div>
                 <div className='links'>
