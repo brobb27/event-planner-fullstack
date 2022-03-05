@@ -16,7 +16,7 @@ const PORT = process.env.PORT || 7000
 // middleware
 app.use(express.json()) // looks for request bodies
 app.use(morgan('dev')) // logs any requests made to the console
-app.use(cors({origin: 'http://localhost:3000'})) // allows requests from localhost 3000
+app.use(cors()) // allows requests from localhost 3000
 
 // connect to the db using mongoose
 mongoose.connect(process.env.MONGODB_URI || `mongodb://localhost:27017/event-planner`,
