@@ -21,7 +21,7 @@ function EventDetailPage() {
 
     // get by id request
     function getEventDetails() {
-        axios.get(`/sessionList/${sessionId}`)
+        axios.get(`${process.env.REACT_APP_EVENT_API}/sessionList/${sessionId}`)
             .then(res => {
                 console.log(res.data)
                 setSessionInfo(res.data)

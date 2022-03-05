@@ -37,7 +37,7 @@ function Form(props) {
     // handle addEvent
     function addEvent(e) {
         e.preventDefault()
-        axios.post(`/sessionList`, eventInfo)
+        axios.post(`${process.env.REACT_APP_EVENT_API}/sessionList`, eventInfo)
             .then(res => {
                 // console.log(res.data)
                 const newEvent = res.data
@@ -58,7 +58,7 @@ function Form(props) {
     // handle updateEvent
     function updateEvent(e) {
         e.preventDefault()
-        axios.put(`sessionList/${props.id}`, eventInfo)
+        axios.put(`${process.env.REACT_APP_EVENT_API}/sessionList/${props.id}`, eventInfo)
             .then(res => {
                 // console.log(res.data)
                 const updatedEvent = res.data

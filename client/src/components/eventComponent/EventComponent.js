@@ -18,7 +18,7 @@ function EventComponent({session, handleCheck}) {
 
     // delete request
     function deleteEvent() {
-        axios.delete(`sessionList/${session._id}`)
+        axios.delete(`${process.env.REACT_APP_EVENT_API}/sessionList/${session._id}`)
         .then(res => {
             // console.log(res)
             setEventList(prevList => prevList.filter(savedEvent => savedEvent._id !== session._id))

@@ -13,7 +13,7 @@ function EventList() {
 
     // get request function for reusability if needed
     function getEventList() {
-        axios.get(`/sessionList`)
+        axios.get(`${process.env.REACT_APP_EVENT_API}/sessionList`)
             .then(res => {
                 const eventList = res.data
                 sortEvents(eventList)
@@ -33,7 +33,7 @@ function EventList() {
 
     // Adds or removes events from the checklist
     function handleCheck(e) {
-        console.log(checkedList)
+        // console.log(checkedList)
         const eventId = e.target.value
         setChecked(prevList => prevList.includes(eventId) ? prevList.filter(item => item !== eventId) : [...prevList, eventId])
     }
@@ -67,9 +67,9 @@ function EventList() {
     // Handle delete selected
     async function handleDelteSelected() {
         for await (const item of checkedList) {
-            await axios.delete(`sessionList/${item}`)
+            await axios.delete(`${process.env.REACT_APP_EVENT_API}/sessionList/${item}`)
             .then(res => {
-                console.log(res)
+                console.log(res.data)
                 setEventList(prevList => prevList.filter(event => event._id !== item))
             })
             .catch(err => {
